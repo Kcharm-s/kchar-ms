@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jenang Kudus</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fdf6e3;
+    }
+
+    .navbar {
+      background: #3e2723;
+    }
+
+    .navbar .nav-link {
+      color: white !important;
+    }
+
+    .navbar .nav-link:hover {
+      color: gold !important;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(62,39,35,0.8), rgba(62,39,35,0.8)),
+      url('https://images.unsplash.com/photo-1604908176997-43188a1c6c42');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 140px 20px;
+      text-align: center;
+    }
+
+    .section {
+      padding: 80px 20px;
+    }
+
+    h2 {
+      color: #5d4037;
+    }
+
+    .gallery-img {
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.08);
+    }
+
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #3e2723;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #3e2723;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Jenang Kudus</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1 data-aos="fade-down">Jenang Kudus</h1>
+  <p data-aos="fade-up">Simbol Manisnya Tradisi dan Kebersamaan</p>
+</div>
+
+<!-- MAKNA -->
+<div class="section container" data-aos="fade-up">
+  <h2 class="text-center">Makna Jenang Kudus</h2>
+
+  <p>
+    Jenang Kudus merupakan salah satu makanan tradisional khas Kudus yang tidak hanya dikenal karena rasanya yang manis,
+    tetapi juga karena nilai filosofis yang terkandung di dalamnya. Rasa manis dari Jenang melambangkan harapan akan
+    kehidupan yang bahagia, damai, dan penuh keberkahan. Dalam kehidupan sehari-hari, manusia diharapkan mampu menjalani
+    hidup dengan penuh kesabaran, keikhlasan, serta sikap yang lembut dalam menghadapi berbagai tantangan.
+  </p>
+
+  <p>
+    Tekstur Jenang yang lembut mencerminkan sifat rendah hati, ketulusan, serta kelembutan hati dalam berinteraksi
+    dengan sesama. Hal ini mengajarkan bahwa setiap individu harus mampu menjaga sikap, menghormati orang lain,
+    dan menjunjung tinggi nilai-nilai kebersamaan. Selain itu, proses pembuatan Jenang yang membutuhkan waktu lama,
+    tenaga, dan ketelitian juga mengandung makna bahwa segala sesuatu yang baik memerlukan usaha, kerja keras,
+    dan kesabaran untuk mencapainya.
+  </p>
+
+  <p>
+    Jenang Kudus juga sering disajikan dalam berbagai acara adat dan keagamaan sebagai simbol doa dan harapan.
+    Kehadirannya dalam setiap acara melambangkan keinginan agar kehidupan yang dijalani senantiasa diberikan
+    kelancaran, kebahagiaan, serta keberkahan. Proses pembuatannya yang sering dilakukan secara bersama-sama juga
+    mencerminkan nilai gotong royong yang menjadi ciri khas masyarakat Indonesia.
+  </p>
+
+  <p>
+    Sebagai warisan budaya, Jenang Kudus memiliki peran penting dalam menjaga identitas daerah. Oleh karena itu,
+    keberadaan Jenang harus terus dilestarikan agar tidak hilang oleh perkembangan zaman. Generasi muda diharapkan
+    dapat mengenal, menghargai, dan menjaga tradisi ini sebagai bagian dari kekayaan budaya bangsa. Dengan demikian,
+    Jenang tidak hanya menjadi makanan tradisional, tetapi juga simbol kehidupan, kebersamaan, dan rasa syukur.
+  </p>
+
+</div>
+
+<!-- GALERI -->
+<div class="section text-center bg-light">
+  <h2 data-aos="fade-up">Galeri</h2>
+  <img src="Jenang.jpg" class="gallery-img" alt="Jenang Kudus" data-aos="zoom-in">
+</div>
+
+<!-- KONTAK -->
+<div class="section text-center" data-aos="fade-up">
+  <h2>Kontak</h2>
+  <p>Email: kcharms039@gmail.com</p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 K-CHARMS</p>
+</footer>
+
+<!-- AUDIO -->
+<audio id="music" loop>
+  <source src="musik.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-btn" onclick="toggleMusic()">▶</button>
+
+<!-- JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+
+  let music = document.getElementById("music");
+  let btn = document.querySelector(".music-btn");
+
+  function toggleMusic() {
+    if (music.paused) {
+      music.play();
+      btn.innerHTML = "⏸";
+    } else {
+      music.pause();
+      btn.innerHTML = "▶";
+    }
+  }
+</script>
+
+</body>
+</html>
